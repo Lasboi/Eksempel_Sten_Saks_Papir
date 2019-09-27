@@ -1,7 +1,8 @@
 public class Generator {
 
     public static int stenSaksPapir() {
-        return 2;
+        int number = 2;
+        return number;
     }
 
 }
