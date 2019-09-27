@@ -18,8 +18,31 @@ public class Player {
     }
 
     public static String symbolPicker() {
-
+        if (number == 1)
+            symbol = "Sten";
+        else if (number == 2)
+            symbol = "Saks";
+        else
+            symbol = "Papir";
         return symbol;
+    }
+
+    public static int winOrLooseOrTie(int result) {
+        if (GeneratorComputer.number == 1 && Player.number == 1 ||
+                GeneratorComputer.number == 2 && Player.number == 2 ||
+                    GeneratorComputer.number == 3 && Player.number == 3)
+                        result = 3; // 3 = Tie
+        else if (GeneratorComputer.number == 1 && Player.number == 2 ||
+                    GeneratorComputer.number == 2 && Player.number == 3 ||
+                        GeneratorComputer.number == 3 && Player.number == 1)
+                            result = 2; //2 = Loose
+        else if (GeneratorComputer.number == 1 && Player.number == 3 ||
+                    GeneratorComputer.number == 2 && Player.number == 1 ||
+                        GeneratorComputer.number == 3 && Player.number == 2)
+                            result = 1; // 1 = Win
+        else
+            result = 3;
+        return result;
     }
 
 }

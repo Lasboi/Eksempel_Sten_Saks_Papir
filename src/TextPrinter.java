@@ -11,11 +11,11 @@ public class TextPrinter {
     }
 
     public static void getPlayerSymbol() {
-        System.out.println("");
+        System.out.println("Du har valgt: " + Player.symbol);
     }
 
     public static void getComputerSymbol() {
-
+        System.out.println("Lad os se hvad computeren har valgt: " + GeneratorComputer.symbol);
     }
 
 }
