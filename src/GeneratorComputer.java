@@ -1,9 +1,9 @@
 public class GeneratorComputer {
-    static int number;
+    static byte number;
     static String symbol;
 
-    public static int pickNumber() {
-        number = (int) (Math.random() * 3 + 1);
+    public static byte pickNumber() {
+        number = (byte) (Math.random() * 3 + 1);
         return number;
     }
 
