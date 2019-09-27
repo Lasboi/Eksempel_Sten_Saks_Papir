@@ -1,12 +1,13 @@
-public class Generator {
-    static int number = 2;
+public class GeneratorComputer {
+    static int number;
     static String symbol;
 
-    public static int stenSaksPapirNumber() {
+    public static int pickNumber() {
+        number = (int) (Math.random() * 3 + 1);
         return number;
     }
 
-    public static String stenSaksPapirString() {
+    public static String pickSymbol() {
         if (number == 1)
             symbol = "Sten";
         else if (number == 2)
