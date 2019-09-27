@@ -10,6 +10,9 @@ public class Main {
         TextPrinter.getPlayerSymbol();
         TextPrinter.getComputerSymbol();
         TextPrinter.printLines();
+        Player.winOrLooseOrTie();
+        TextPrinter.getWinOrLooseOrTie();
+        TextPrinter.printLines();
 
     }
 

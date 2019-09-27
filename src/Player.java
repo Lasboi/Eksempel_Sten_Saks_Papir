@@ -3,6 +3,7 @@ import java.util.Scanner;
 public class Player {
     static byte number = 0;
     static String symbol;
+    static int result = 3;
 
     public static byte numberChooser() {
         Scanner scanner = new Scanner(System.in);
@@ -27,21 +28,25 @@ public class Player {
         return symbol;
     }
 
-    public static int winOrLooseOrTie(int result) {
+    public static int winOrLooseOrTie() {
         if (GeneratorComputer.number == 1 && Player.number == 1 ||
                 GeneratorComputer.number == 2 && Player.number == 2 ||
                     GeneratorComputer.number == 3 && Player.number == 3)
                         result = 3; // 3 = Tie
+
         else if (GeneratorComputer.number == 1 && Player.number == 2 ||
                     GeneratorComputer.number == 2 && Player.number == 3 ||
                         GeneratorComputer.number == 3 && Player.number == 1)
                             result = 2; //2 = Loose
+
         else if (GeneratorComputer.number == 1 && Player.number == 3 ||
                     GeneratorComputer.number == 2 && Player.number == 1 ||
                         GeneratorComputer.number == 3 && Player.number == 2)
                             result = 1; // 1 = Win
+
         else
             result = 3;
+
         return result;
     }
 

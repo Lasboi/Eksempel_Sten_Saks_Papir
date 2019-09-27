@@ -18,4 +18,19 @@ public class TextPrinter {
         System.out.println("Lad os se hvad computeren har valgt: " + GeneratorComputer.symbol);
     }
 
+    public static void getWinOrLooseOrTie() {
+        if (Player.result == 1) {
+            System.out.println(Player.symbol + " slår " + GeneratorComputer.symbol);
+            System.out.println("Du har vundet Juhuuuuu!");
+        }
+        else if (Player.result == 2) {
+            System.out.println(GeneratorComputer.symbol + " slår " + Player.symbol);
+            System.out.println("Du har tabt... Get better next time looser!");
+        }
+        else if (Player.result == 3)
+            System.out.println("Det blev uafgjort... BORING!");
+        else
+            System.out.println("Det blev uafgjort... BORING!");
+    }
+
 }
