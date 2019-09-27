@@ -13,6 +13,8 @@ public class Main {
         Player.winOrLooseOrTie();
         TextPrinter.getWinOrLooseOrTie();
         TextPrinter.printLines();
+        TextPrinter.playAgain();
+        TextPrinter.newGame();
 
     }
 

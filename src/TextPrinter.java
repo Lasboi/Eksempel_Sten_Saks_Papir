@@ -1,4 +1,7 @@
+import java.util.Scanner;
+
 public class TextPrinter {
+    static String answer;
 
     public static void printLines() {
         System.out.println("******************************");
@@ -31,6 +34,35 @@ public class TextPrinter {
             System.out.println("Det blev uafgjort... BORING!");
         else
             System.out.println("Det blev uafgjort... BORING!");
+    }
+
+    public static void playAgain() {
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.print("Vil du spille igen? Ja eller Nej: ");
+        answer = scanner.next();
+        answer.toLowerCase();
+
+    }
+
+    public static void newGame() {
+        if (answer.equals("ja")) {
+            for (int i = 0; i < 20; ++i) System.out.println();
+            Player.number = 0;
+            String[] arguments = new String[] {"123"};
+            Main.main(arguments);
+        }
+        else {
+            System.out.println("Så skal du da være fri!");
+            madeBy();
+        }
+    }
+
+    static void madeBy() {
+        System.out.println("");
+        System.out.println("******************************");
+        System.out.println("******* Kodet af Lasse *******");
+        System.out.println("******************************");
     }
 
 }
