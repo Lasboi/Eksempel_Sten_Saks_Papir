@@ -69,6 +69,7 @@ public class Player {
         return result;
     }
 
+    //Score system som holder øje med hvor mange gange man har tabt, vundet og spillet uafgjort
     public static void addScore() {
         if (result == 1)
             wins = wins + 1;

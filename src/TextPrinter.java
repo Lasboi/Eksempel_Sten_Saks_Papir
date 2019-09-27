@@ -68,6 +68,7 @@ public class TextPrinter {
         }
     }
 
+    //Vi printer vores score ud til konsollen
     public static void printScore() {
         System.out.println("Du har i alt vundet " + Player.wins + " gange! :D");
         System.out.println("Du har i alt tabt " + Player.lost + " gange! >:(");
