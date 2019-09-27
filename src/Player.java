@@ -5,6 +5,9 @@ public class Player {
     static byte number = 0; //Vi sætter som standard number til 0 så vi kan komme videre i vores kode
     static String symbol;
     static int result = 3; //Vi sætter som standard result til 3 så koden kan fortsætte hvis en fejl skulle ske
+    static int wins = 0;
+    static int lost = 0;
+    static int ties = 0;
 
    //Vores loop som sikre at man vælger et tal mellem 1-3 før man kan fortsætte videre i koden
     public static byte numberChooser() {
@@ -24,6 +27,7 @@ public class Player {
         try{ //Vi prøver at få fat i en Byte værdi
             return number = scanner.nextByte();
         } catch (InputMismatchException e){ //Mislykkeds det sendes brugeren tilbage til starten af metoden
+            System.out.println("******************************");
             System.out.println("Du kan ikke skrive et ord her... Stuuupid!");
             System.out.print("Du SKAL skrive et tal mellem 1-3. Prøv igen: ");
             scanner.next();
@@ -63,6 +67,15 @@ public class Player {
             result = 3;
 
         return result;
+    }
+
+    public static void addScore() {
+        if (result == 1)
+            wins = wins + 1;
+        else if ( result == 2)
+            lost = lost + 1;
+        else
+            ties = ties + 1;
     }
 
 }

@@ -68,6 +68,12 @@ public class TextPrinter {
         }
     }
 
+    public static void printScore() {
+        System.out.println("Du har i alt vundet " + Player.wins + " gange! :D");
+        System.out.println("Du har i alt tabt " + Player.lost + " gange! >:(");
+        System.out.println("Du har i alt spillet uafgjort " + Player.ties + " gange! >:O");
+    }
+
     //Bedste metode i EU
     static void madeBy() {
         System.out.println("");
