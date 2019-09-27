@@ -1,6 +1,7 @@
 public class Main {
 
     public static void main(String[] args) {
+        //Vi kalder vores metoder
         TextPrinter.setupProgram();
         GeneratorComputer.pickNumber();
         GeneratorComputer.pickSymbol();
@@ -15,7 +16,6 @@ public class Main {
         TextPrinter.printLines();
         TextPrinter.playAgain();
         TextPrinter.newGame();
-
     }
 
 }
