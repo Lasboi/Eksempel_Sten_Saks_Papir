@@ -1,3 +1,4 @@
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Player {
@@ -10,13 +11,24 @@ public class Player {
         Scanner scanner = new Scanner(System.in);
         while (number == 0 || number < 0 || number > 3) {
             System.out.print("1 = Sten, 2 = Saks, 3 = Papir. Hvad vælger du?: ");
-            number = scanner.nextByte();
+            inputInt("", scanner);
             if (number < 0 || number > 3) {
                 System.out.println("Du skal vælge mellem 1, 2 eller 3...");
                 System.out.println("******************************");
             }
         }
         return number;
+    }
+
+    public static int inputInt(String prompt, Scanner scanner) {
+        try{ //Vi prøver at få fat i en Byte værdi
+            return number = scanner.nextByte();
+        } catch (InputMismatchException e){ //Mislykkeds det sendes brugeren tilbage til starten af metoden
+            System.out.println("Du kan ikke skrive et ord her... Stuuupid!");
+            System.out.print("Du SKAL skrive et tal mellem 1-3. Prøv igen: ");
+            scanner.next();
+            return inputInt(prompt, scanner);
+        }
     }
 
     //Vi tager input fra number og giver et "symbol" (Sten, Saks eller Papir) alt efter hvad man indtaster
