@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class Player {
     static byte number = 0; //Vi sætter som standard number til 0 så vi kan komme videre i vores kode
     static String symbol;
-    static int result = 3; //Vi sætter som standard result til 3 så koden kan fortsætte hvis en fejl skulle ske
+    static byte result = 3; //Vi sætter som standard result til 3 så koden kan fortsætte hvis en fejl skulle ske
     static int winLooseTie[] = {0, 0, 0};
 
    //Vores loop som sikre at man vælger et tal mellem 1-3 før man kan fortsætte videre i koden
