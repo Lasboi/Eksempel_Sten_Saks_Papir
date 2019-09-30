@@ -1,3 +1,5 @@
+import java.lang.reflect.Array;
+import java.util.ArrayList;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -5,9 +7,7 @@ public class Player {
     static byte number = 0; //Vi sætter som standard number til 0 så vi kan komme videre i vores kode
     static String symbol;
     static int result = 3; //Vi sætter som standard result til 3 så koden kan fortsætte hvis en fejl skulle ske
-    static int wins = 0;
-    static int lost = 0;
-    static int ties = 0;
+    static int winLooseTie[] = {0, 0, 0};
 
    //Vores loop som sikre at man vælger et tal mellem 1-3 før man kan fortsætte videre i koden
     public static byte numberChooser() {
@@ -50,33 +50,32 @@ public class Player {
     public static int winOrLooseOrTie() {
         if (GeneratorComputer.number == 1 && Player.number == 1 ||
                 GeneratorComputer.number == 2 && Player.number == 2 ||
-                    GeneratorComputer.number == 3 && Player.number == 3)
-                        result = 3; // 3 = Tie
+                    GeneratorComputer.number == 3 && Player.number == 3) {
+            winLooseTie[2] = winLooseTie[2] + 1;
+            result = 3; // 3 = Tie
+        }
 
         else if (GeneratorComputer.number == 1 && Player.number == 2 ||
                     GeneratorComputer.number == 2 && Player.number == 3 ||
-                        GeneratorComputer.number == 3 && Player.number == 1)
-                            result = 2; //2 = Loose
+                        GeneratorComputer.number == 3 && Player.number == 1) {
+            winLooseTie[1] = winLooseTie[1] + 1;
+            result = 2; //2 = Loose
+        }
 
-        else if (GeneratorComputer.number == 1 && Player.number == 3 ||
+        else if
+            (GeneratorComputer.number == 1 && Player.number == 3 ||
                     GeneratorComputer.number == 2 && Player.number == 1 ||
-                        GeneratorComputer.number == 3 && Player.number == 2)
-                            result = 1; // 1 = Win
+                        GeneratorComputer.number == 3 && Player.number == 2) {
+                winLooseTie[0] = winLooseTie[0] + 1;
+                result = 1; // 1 = Win
+            }
 
-        else
+        else {
+            winLooseTie[2] = winLooseTie[2] + 1;
             result = 3;
+        }
 
         return result;
-    }
-
-    //Score system som holder øje med hvor mange gange man har tabt, vundet og spillet uafgjort
-    public static void addScore() {
-        if (result == 1)
-            wins = wins + 1;
-        else if ( result == 2)
-            lost = lost + 1;
-        else
-            ties = ties + 1;
     }
 
 }

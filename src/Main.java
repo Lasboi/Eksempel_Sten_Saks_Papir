@@ -13,7 +13,6 @@ public class Main {
         TextPrinter.printLines();
         Player.winOrLooseOrTie();
         TextPrinter.getWinOrLooseOrTie();
-        Player.addScore();
         TextPrinter.printLines();
         TextPrinter.printScore();
         TextPrinter.printLines();

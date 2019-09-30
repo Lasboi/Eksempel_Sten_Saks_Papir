@@ -70,9 +70,9 @@ public class TextPrinter {
 
     //Vi printer vores score ud til konsollen
     public static void printScore() {
-        System.out.println("Du har i alt vundet " + Player.wins + " gange! :D");
-        System.out.println("Du har i alt tabt " + Player.lost + " gange! >:(");
-        System.out.println("Du har i alt spillet uafgjort " + Player.ties + " gange! >:O");
+        System.out.println("Du har i alt vundet " + Player.winLooseTie[0] + " gange! :D");
+        System.out.println("Du har i alt tabt " + Player.winLooseTie[1] + " gange! >:(");
+        System.out.println("Du har i alt spillet uafgjort " + Player.winLooseTie[2] + " gange! >:O");
     }
 
     //Bedste metode i EU
